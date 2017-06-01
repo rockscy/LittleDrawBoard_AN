@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rock/drawboard/Contral/PlygonCtl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rock/drawboard/ui/activity/GridViewColorActivity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rock/drawboard/ui/activity/OpenGridViewActivity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rock/drawboard/ui/activity/SaveGridViewActivity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rock/drawboard/ui/activity/SketchpadMainActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rock/drawboard/ui/adapter/GridImageAdapter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rock/drawboard/ui/view/SketchpadView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rock/drawboard/ui/view/vertexDefine.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rock/drawboard/ui/view/vertexStack.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/color_dialog.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/open_dialog.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/save_dialog.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values/dialog_style.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values/style.xml" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

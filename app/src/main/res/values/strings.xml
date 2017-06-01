@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">小小画板</string>
+    <string name="hello">Hello World, SketchpadActivity!</string>
+    <string name="file_name">小画板</string>
+    <string name="dialog_open">打开</string>
+    <string name="dialog_save">保存</string>
+    <string name="filename">文件名：</string>
+    <string name="thick">极粗</string>
+    <string name="thin">笔迹宽度</string>
+</resources>

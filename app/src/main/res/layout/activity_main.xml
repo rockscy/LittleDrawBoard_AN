@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/bg">
+
+	<LinearLayout
+		android:layout_marginTop="20dp"
+		android:id="@+id/layout"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="10dp"
+		android:gravity="center_vertical">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/thin"
+			android:textColor="#0F0F0F"
+			android:textSize="10sp" />
+		<SeekBar
+			android:id="@+id/seekBar"
+			android:layout_width="120dp"
+			android:layout_height="25dp" />
+		<TextView
+			android:layout_marginLeft="5dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="橡皮大小"
+			android:textColor="#0F0F0F"
+			android:textSize="10sp" />
+		<SeekBar
+			android:id="@+id/seekBar_ea"
+			android:layout_width="120dp"
+			android:layout_height="25dp" />
+	</LinearLayout>
+
+	<com.rock.drawboard.ui.view.SketchpadView
+		android:id="@+id/SketchadView"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginBottom="35dp"
+		android:layout_marginLeft="35dp"
+		android:layout_marginTop="35dp"
+		android:layout_toLeftOf="@+id/control_board">"</com.rock.drawboard.ui.view.SketchpadView>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/control_board"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_centerVertical="true"
+		android:layout_marginRight="30dp"
+		android:orientation="vertical">
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<Button
+				android:id="@+id/buttonpen_ID"
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+				android:background="@drawable/penx" />
+
+			<Button
+				android:id="@+id/buttoneraser_ID"
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+				android:background="@drawable/eraserx" />
+		</LinearLayout>
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<Button
+				android:id="@+id/buttoncolor_ID"
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+				android:background="@drawable/colorx" />
+
+			<Button
+				android:id="@+id/buttonrect_ID"
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+				android:background="@drawable/cubex" />
+		</LinearLayout>
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<Button
+				android:id="@+id/buttonline_ID"
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+				android:background="@drawable/linex" />
+
+			<Button
+				android:id="@+id/buttoncycle_ID"
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+				android:background="@drawable/circlex" />
+		</LinearLayout>
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<Button
+				android:id="@+id/buttonredo_ID"
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+				android:background="@drawable/redox" />
+
+			<Button
+				android:id="@+id/buttonundo_ID"
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+				android:background="@drawable/undox" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<Button
+				android:id="@+id/buttonclear_ID"
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+				android:background="@drawable/redox"/>
+
+			<Button
+				android:id="@+id/buttonabout_ID"
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+				android:background="@drawable/gyx"/>
+		</LinearLayout>
+	</LinearLayout>
+
+</RelativeLayout>

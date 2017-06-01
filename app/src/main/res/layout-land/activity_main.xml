@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/layout"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/thin"
+            android:textColor="#0F0F0F"
+            android:textSize="10sp" />
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="120dp"
+            android:layout_height="25dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="橡皮大小"
+            android:textColor="#0F0F0F"
+            android:textSize="10sp" />
+        <SeekBar
+            android:id="@+id/seekBar_ea"
+            android:layout_width="120dp"
+            android:layout_height="25dp" />
+    </LinearLayout>
+
+    <com.rock.drawboard.ui.view.SketchpadView
+        android:id="@+id/SketchadView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="35dp"
+        android:layout_toLeftOf="@+id/control_board">"</com.rock.drawboard.ui.view.SketchpadView>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/control_board"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:src="@mipmap/icon_pen"
+                android:id="@+id/buttonpen_ID"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/btn_select" />
+
+            <ImageView
+                android:background="@drawable/btn_select"
+                android:id="@+id/buttoneraser_ID"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/eraser" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:gravity="center"
+                android:id="@+id/buttoncolor_ID"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+               android:src="@mipmap/icon_color"
+                android:background="@drawable/btn_select"
+                 />
+
+            <ImageView
+                android:src="@mipmap/icon_rec"
+                android:id="@+id/buttonrect_ID"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/btn_select" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:src="@mipmap/icon_line"
+                android:id="@+id/buttonline_ID"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+
+                android:background="@drawable/btn_select"/>
+
+            <ImageView
+                android:src="@mipmap/icon_circle"
+                android:id="@+id/buttoncycle_ID"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/btn_select" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:src="@mipmap/icon_redo"
+
+                android:id="@+id/buttonredo_ID"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/btn_select" />
+
+            <ImageView
+                android:src="@mipmap/icon_undo"
+                android:id="@+id/buttonundo_ID"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/btn_select" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/buttonclear_ID"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@mipmap/icon_clear"
+                android:background="@drawable/btn_select"/>
+
+            <ImageView
+                android:src="@mipmap/icon_about"
+                android:id="@+id/buttonabout_ID"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/btn_select"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

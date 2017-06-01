@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/bg_white"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="230dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@mipmap/login_icon"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <com.rock.drawboard.ui.view.ClearEditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/login_user_edt"
+        style="@style/Login_or_Rigster_edt_Style"
+        android:drawableLeft="@mipmap/login_user_icon"
+        android:hint="请输入主机IP地址"
+        android:inputType="text" />
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="260dp"
+        android:layout_height="34dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/login_btn_shape"
+        android:text="连接"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+    <Button
+        android:id="@+id/youke_btn"
+        android:layout_width="260dp"
+        android:layout_height="34dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/login_btn_shape"
+        android:text="游客"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+</LinearLayout>
