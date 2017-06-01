@@ -1,7 +1,7 @@
-## LittleDrawBoard_pc ##
+## LittleDrawBoard_AN ##
 
-**LittleDrawBoard** PC端是基于**Socket**实现的android端和PC端同步绘画板；<br />
-[Android端源码地址](https://github.com/SmallStoneDD/LittleDrawBoard_an)
+**LittleDrawBoard** Android端是基于**Socket**实现的android端和PC端同步绘画板；<br />
+[PC端源码地址](https://github.com/SmallStoneDD/LittleDrawBoard_PC)
 
 ### 开发工具 ###
 - android端使用 [Android Studio](http://www.android-studio.org/)
@@ -28,4 +28,3 @@ step5：点击链接，成功后开始同步绘制。
 
 ## 联系 ##
 617913246@qq.com
-# LittleDrawBoard_AN
