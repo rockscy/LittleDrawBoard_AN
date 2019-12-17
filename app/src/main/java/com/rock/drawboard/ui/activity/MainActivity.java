@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -31,18 +33,24 @@ import com.rock.drawboard.utils.ToastUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     private static final String TAG = MainActivity.class.getSimpleName();
-    private ImageView m_pen,m_undo,m_redo,m_eraser,m_rect,m_cycle,m_line,m_color;
+    private ImageView m_pen, m_undo, m_redo, m_eraser, m_rect, m_cycle, m_line, m_color;
     private SeekBar seekBar;
     private boolean isExit;
     private SketchpadView m_view;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectDiskReads().detectDiskWrites().detectNetwork().penaltyLog().build());
+        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().penaltyDeath().build());
+
         setContentView(R.layout.activity_main);
         m_view = (SketchpadView) this.findViewById(R.id.SketchadView);
         m_pen = (ImageView) this.findViewById(R.id.buttonpen_ID);
@@ -70,23 +78,23 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                                           boolean fromUser) {
                 switch (seekBar.getProgress()) {
                     case 0:
-                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE,new StrokeWidth(0,SketchpadView.STROKE_ERASER));
+                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE, new StrokeWidth(0, SketchpadView.STROKE_ERASER));
                         SketchpadView.setStrokeSize(15, SketchpadView.STROKE_ERASER);
                         break;
                     case 1:
-                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE,new StrokeWidth(1,SketchpadView.STROKE_ERASER));
+                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE, new StrokeWidth(1, SketchpadView.STROKE_ERASER));
                         SketchpadView.setStrokeSize(20, SketchpadView.STROKE_ERASER);
                         break;
                     case 2:
-                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE,new StrokeWidth(2,SketchpadView.STROKE_ERASER));
+                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE, new StrokeWidth(2, SketchpadView.STROKE_ERASER));
                         SketchpadView.setStrokeSize(30, SketchpadView.STROKE_ERASER);
                         break;
                     case 3:
-                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE,new StrokeWidth(3,SketchpadView.STROKE_ERASER));
+                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE, new StrokeWidth(3, SketchpadView.STROKE_ERASER));
                         SketchpadView.setStrokeSize(50, SketchpadView.STROKE_ERASER);
                         break;
                     case 4:
-                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE,new StrokeWidth(4,SketchpadView.STROKE_ERASER));
+                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE, new StrokeWidth(4, SketchpadView.STROKE_ERASER));
                         SketchpadView.setStrokeSize(100, SketchpadView.STROKE_ERASER);
                         break;
                 }
@@ -108,23 +116,23 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                                           boolean fromUser) {
                 switch (seekBar.getProgress()) {
                     case 0:
-                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE,new StrokeWidth(0,SketchpadView.STROKE_PEN));
+                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE, new StrokeWidth(0, SketchpadView.STROKE_PEN));
                         SketchpadView.setStrokeSize(5, SketchpadView.STROKE_PEN);
                         break;
                     case 1:
-                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE,new StrokeWidth(1,SketchpadView.STROKE_PEN));
+                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE, new StrokeWidth(1, SketchpadView.STROKE_PEN));
                         SketchpadView.setStrokeSize(8, SketchpadView.STROKE_PEN);
                         break;
                     case 2:
-                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE,new StrokeWidth(2,SketchpadView.STROKE_PEN));
+                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE, new StrokeWidth(2, SketchpadView.STROKE_PEN));
                         SketchpadView.setStrokeSize(10, SketchpadView.STROKE_PEN);
                         break;
                     case 3:
-                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE,new StrokeWidth(3,SketchpadView.STROKE_PEN));
+                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE, new StrokeWidth(3, SketchpadView.STROKE_PEN));
                         SketchpadView.setStrokeSize(15, SketchpadView.STROKE_PEN);
                         break;
                     case 4:
-                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE,new StrokeWidth(4,SketchpadView.STROKE_PEN));
+                        SketchpadView.sendDataToPc(DataPackage.DataType.STROKE, new StrokeWidth(4, SketchpadView.STROKE_PEN));
                         SketchpadView.setStrokeSize(20, SketchpadView.STROKE_PEN);
                         break;
                 }
@@ -170,7 +178,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 m_view.clearAllStrokes();
                 break;
             case R.id.buttonabout_ID:
-                Intent intent = new Intent(this,AboutActivity.class);
+                Intent intent = new Intent(this, AboutActivity.class);
                 startActivity(intent);
                 break;
         }
@@ -203,7 +211,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
 
-
     private void OnLineClick(View v) {
         m_view.setStrokeType(m_view.STROKE_LINE);
     }
@@ -220,6 +227,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         //设置橡皮擦的类型
         m_view.setStrokeType(m_view.STROKE_ERASER);
     }
+
     private void onRedoClick(View v) {
         m_view.redo();//响应redo事件
     }
@@ -232,11 +240,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private void OnPenClick(View v) {
         m_view.setStrokeType(m_view.STROKE_PEN);//设置画笔的类型
     }
+
     private void OnColorClick(View v) {
         //跳转到GridViewDemoActivity
         Intent intent = new Intent(MainActivity.this, GridViewColorActivity.class);
         MainActivity.this.startActivity(intent);
     }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -245,6 +255,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             EventBus.getDefault().register(this);
         }
     }
+
     @Override
     public void onPause() {
         super.onPause();
@@ -253,7 +264,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             EventBus.getDefault().unregister(this);
         }
     }
-    @Subscribe
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(final BoardEvent event) {
         runOnUiThread(new Runnable() {
             @Override
@@ -278,8 +290,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                             handleStroke(strokeWidth);
                             break;
                     }
-                }catch (Exception e) {
-                    LogUtils.e(TAG,"handle board event fail");
+                } catch (Exception e) {
+                    LogUtils.e(TAG, "handle board event fail");
                 }
 
             }
@@ -305,16 +317,17 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         int y = point.getY();
         switch (point.getState()) {
             case SketchpadView.ACTION_DOWN:
-                m_view.action_down(x,y);
+                m_view.action_down(x, y);
                 break;
             case SketchpadView.ACTION_MOVE:
-                m_view.action_move(x,y);
+                m_view.action_move(x, y);
                 break;
             case SketchpadView.ACTION_UP:
-                m_view.action_up(x,y);
+                m_view.action_up(x, y);
                 break;
         }
     }
+
     private void handleCommand(Command command) {
         switch (command.getType()) {
             case SketchpadView.UNDO:
@@ -331,6 +344,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
         }
     }
+
     private void handleColor(SelectColor color) {
         int rgb = Color.rgb(color.getR(), color.getG(), color.getB());
         m_view.setStrokeColor(rgb);

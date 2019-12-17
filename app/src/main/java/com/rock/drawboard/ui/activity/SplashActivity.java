@@ -1,10 +1,13 @@
 package com.rock.drawboard.ui.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
+
+
+import androidx.annotation.Nullable;
 
 import com.rock.drawboard.R;
 import com.rock.drawboard.socket.ClientAction;
@@ -25,6 +28,7 @@ public class SplashActivity extends BaseActivity{
     }
 
 
+    @SuppressLint("HandlerLeak")
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {

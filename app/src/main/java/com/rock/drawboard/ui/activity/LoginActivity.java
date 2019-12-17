@@ -2,10 +2,12 @@ package com.rock.drawboard.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.annotation.Nullable;
 
 import com.rock.drawboard.MyApplication;
 import com.rock.drawboard.R;
@@ -18,6 +20,7 @@ import com.rock.drawboard.utils.ToastUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -64,7 +67,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     /**
      * 处理事件
      */
-    @Subscribe
+    @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(LoginEvent userEvent) {
         runOnUiThread(new Runnable() {
             @Override
